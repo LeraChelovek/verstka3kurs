@@ -16,19 +16,17 @@
 }
 
 .card-image {
-    width: 100%; /* Занимает всю ширину карточки */
+    width: 100%; 
     position: relative;
 }
 
 .card-image img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Заполняет весь контейнер */
+    object-fit: contain; 
     display: block;
 }
 
-
-/* Адаптивность */
 @media (max-width: 768px) {
 
     .card-image {

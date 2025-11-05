@@ -77,7 +77,6 @@
     flex-direction: row-reverse;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .card {
         flex-direction: column;

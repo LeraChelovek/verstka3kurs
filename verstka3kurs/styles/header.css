@@ -37,7 +37,7 @@
     z-index: 1;
     clip-path: polygon(28% 18%, 19% 7%, 0 15%, 6% 33%, 0 75%, 50% 100%, 100% 77%, 94% 33%, 100% 14%, 83% 7%, 75% 17%);
 }
-/* Глаза через псевдоэлементы */
+
 .bear::before,
 .bear::after {
     content: '';
@@ -45,16 +45,14 @@
     background: #ffffff;
     width: 20%;
     height: 20%;
-    top: 40%; /* регулируйте положение по вертикали*/ 
+    top: 40%; 
 }
 
-/* Левый глаз */
 .bear::before {
     left: 20%;
     clip-path: polygon(9% 1%, 65% 12%, 90% 39%, 38% 29%);
 }
 
-/* Правый глаз */
 .bear::after {
     right: 20%;
     clip-path: polygon(46% 7%, 100% 0%, 69% 28%, 7% 37%);
@@ -74,7 +72,7 @@
 .target {
     width: 60%;
     height: 60%;
-    top: 40%; /* Регулируйте по вертикали */
+    top: 40%; 
     right: 0;
     border-radius: 50%;
     z-index: 10;

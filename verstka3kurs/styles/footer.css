@@ -1,4 +1,3 @@
-/* Footer Styles */
 .footer {
     background:#000000;
     color: #ffffff;
@@ -88,7 +87,6 @@
     font-size: 0.8rem; 
 }
 
-/* Responsive Footer */
 @media (max-width: 850px) {
     .footer-content {
         display: flex;

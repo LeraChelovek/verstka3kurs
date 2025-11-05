@@ -20,8 +20,8 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: auto 0; /* Центрирует себя по вертикали */
-    flex: 1; /* Занимает все оставшееся пространство */
+    margin: auto 0; 
+    flex: 1; 
 }
 
 .insert-container{

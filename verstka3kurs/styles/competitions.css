@@ -12,7 +12,6 @@
     margin-bottom: 40px;
 }
 
-/* Картинка внутри текста - обтекание */
 .card-image {
     float: left;
     width:50%;
@@ -20,10 +19,9 @@
     shape-outside: margin-box; /* Для плавного обтекания */
 }
 
-/* Для четных карточек - картинка справа */
 .gallery-card:nth-child(even) .card-image {
     float: right;
-    margin: 0 0 0 25px; /* Отступ слева вместо справа */
+    margin: 0 0 0 25px; 
 }
 
 .card-image img {
@@ -91,7 +89,6 @@
     font-size: 1.2rem;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .card-image {
         width: 45%;

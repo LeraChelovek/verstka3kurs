@@ -229,7 +229,6 @@
     animation: moveDown 0.8s ease forwards;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .questions-area {
         padding: 1.5rem;
@@ -301,7 +300,6 @@
     background: #27ae60;
 }
 
-/* Адаптивность для кнопки */
 @media (max-width: 480px) {
     .restart-button {
         padding: 12px 25px;
