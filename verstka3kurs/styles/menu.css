@@ -1,0 +1,59 @@
+/* Main Menu Styles */
+.main-menu {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid;
+    position: sticky;
+    top: 100px; 
+    align-self: flex-start;
+}
+
+.menu-title {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.menu-list {
+    
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-item {
+    margin: 0;
+    
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px;
+    background: #005240;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.menu-link:hover {
+    background: #168169;
+}
+
+.menu-link.coming-soon {
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+}
+
+.menu-link.coming-soon:hover {
+    background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+}
+
+

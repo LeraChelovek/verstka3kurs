@@ -1,0 +1,178 @@
+.header {
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 70px; 
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.bear{
+    position: relative;
+    background: #000;
+    width: 70%;
+    height: 100%;
+    z-index: 1;
+    clip-path: polygon(28% 18%, 19% 7%, 0 15%, 6% 33%, 0 75%, 50% 100%, 100% 77%, 94% 33%, 100% 14%, 83% 7%, 75% 17%);
+}
+/* Глаза через псевдоэлементы */
+.bear::before,
+.bear::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    width: 20%;
+    height: 20%;
+    top: 40%; /* регулируйте положение по вертикали*/ 
+}
+
+/* Левый глаз */
+.bear::before {
+    left: 20%;
+    clip-path: polygon(9% 1%, 65% 12%, 90% 39%, 38% 29%);
+}
+
+/* Правый глаз */
+.bear::after {
+    right: 20%;
+    clip-path: polygon(46% 7%, 100% 0%, 69% 28%, 7% 37%);
+}
+
+.bear .nose{
+    position: absolute;
+    width: 40%;
+    height: 35%;
+    top:45%;
+    z-index: 2;
+    left:30%;
+    background:#ffffff;
+    clip-path: polygon(65% 33%, 73% 41%, 68% 60%, 51% 67%, 52% 72%, 72% 82%, 68% 86%, 49% 75%, 32% 86%, 29% 82%, 46% 72%, 46% 67%, 30% 59%, 27% 41%, 34% 33%);
+}
+
+.target {
+    width: 60%;
+    height: 60%;
+    top: 40%; /* Регулируйте по вертикали */
+    right: 0;
+    border-radius: 50%;
+    z-index: 10;
+    background: 
+        radial-gradient(circle, 
+            #bd1919 0%, #bd1919 10%,
+            #005240 10%, #005240 20%,
+            #ffffff 20%, #ffffff 25%,
+            #000000 25%, #000000 35%,
+            #ffffff 35%, #ffffff 45%,
+            #000000 45%, #000000 55%,
+            #ffffff 55%, #ffffff 65%,
+            #000000 65%, #000000 100%
+        );
+    position: absolute;
+}
+
+
+
+.nav-link {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #005240;
+    color: #ffffff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #000000;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+@media (max-width: 850px) {
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: #ffffff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        gap: 1rem;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav {
+        padding: 0.8rem 2rem;
+    }
+}

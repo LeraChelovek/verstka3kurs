@@ -1,0 +1,521 @@
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.insert-image {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    display: block;
+}
+
+.painting-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto 0; /* Центрирует себя по вертикали */
+    flex: 1; /* Занимает все оставшееся пространство */
+}
+
+.insert-container{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #2c3e50;
+    overflow: hidden;
+}
+
+/* Аквариум */
+.aquarium {
+    background: white;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #2c3e50;
+    overflow: hidden;
+}
+
+.leaf-1{
+    position: absolute;
+    left:30px;
+    bottom: 0;
+    border:none;
+    width: 120px;
+    height: 195px;
+    border-radius: 50%;
+    border-left: 11px solid lime;
+    transform: rotate(15deg) ;
+    z-index: 0;
+}
+
+
+
+.leaf-2{
+    position: absolute;
+    right:10px;
+    bottom: 0;
+    border:none;
+    width: 100px;
+    height: 190px;
+    border-radius: 50%;
+    border-right: 10px solid lime;
+    transform: rotate(-20deg);
+    z-index: 25;
+}
+
+.leaf-3{
+    position: absolute;
+    left:90px;
+    bottom: 0;
+    border:none;
+    width: 100px;
+    height: 190px;
+    border-radius: 50%;
+    border-left: 11px solid lime;
+    transform: rotate(17deg) ;
+    z-index: 0;
+}
+
+.rocks{
+    z-index: 30;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.rocks .rock{
+    width: clamp(15px, 3vw, 25px);
+    height: 10px;
+    background: #895E0D;
+    border-radius: 40%;
+}
+
+/* Общие стили для рыбок */
+.fish {
+    position: absolute;
+}
+
+.fish .body-wrapper{
+    position: relative;
+    z-index: 15;
+}
+
+/* Тело рыбки */
+.fish .body {
+    position: absolute;
+    z-index: 20;
+}
+
+/* Хвост рыбки */
+.fish .tail { 
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Глаз рыбки */
+.fish .eye {
+    border-radius: 50%;
+    background: black;
+    width: 7px;
+    height: 7px;
+    z-index: 30;
+}
+
+.fish .pattern-1{
+    z-index: 40;
+}
+
+.fish .pattern-2-1{
+    z-index: 40;
+}
+
+.fish .pattern-2-2{
+    z-index: 40;
+}
+
+.fish .pattern-2-3{
+    z-index: 40;
+}
+
+/* Первая рыбка */
+.fish-1 {
+    top: 50px;
+    left:10px;
+}
+
+.fish-1 .body-wrapper{
+    overflow: hidden;
+    width: 75px;
+    height: 40px;
+    border-radius: 50%;
+    transform: rotate(-15deg);
+}
+
+.fish-1 .body{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(55deg, #E4BB38, #F4F5D5);
+}
+
+.fish-1 .eye{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    transform: rotate(15deg);
+}
+
+.fish-1 .pattern-1{
+    position: absolute;
+    top:0px;
+    left: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border:5px solid  magenta;
+}
+
+.fish-1 .pattern-2-1{
+    position: absolute;
+    left: 20px;
+    top:0px;
+    width: 17px;
+    height: 15px;
+    border-radius: 50%; 
+    border: 3px solid magenta;
+    clip-path: inset(0 50% 0 0);
+    transform: rotate(25deg);
+}
+
+.fish-1 .pattern-2-2{
+    position: absolute;
+    left:20px;
+    top:12px;
+    width: 17px;
+    height: 15px;
+    border: 3px solid magenta;
+    border-radius: 50%;
+    clip-path: inset(0 50% 0 0);
+}
+
+.fish-1 .pattern-2-3{
+    position: absolute;
+    left:22px;
+    top:25px;
+    width: 17px;
+    height: 15px;
+    border: 3px solid magenta;
+    border-radius: 50%;
+    clip-path: inset(0 50% 0 0);
+    transform: rotate(-20deg);
+}
+
+.fish-1 .tail{
+    left: -15px;
+    top: 15px;
+    border-width: 15px 0 15px 30px;
+    border-color: transparent transparent transparent #E6C451;
+    transform: rotate(-15deg);
+    z-index: 10;
+}
+
+.fish-2 {
+    top: 50px;
+    left:140px;
+}
+
+.fish-2 .body-wrapper{
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    border-radius: 50%;
+    transform: rotate(35deg);
+    overflow: hidden;
+}
+
+.fish-2 .body {
+    width: 100%;
+    height: 100%; 
+    background: linear-gradient(45deg, #F4F5D5 , #E4BB38);
+}
+
+.fish-2 .pattern-1{
+    position: absolute;
+    top: 0px ;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border:5px solid  red;
+}
+
+.fish-2 .pattern-2-1{
+    position: absolute;
+    left: 35px;
+    top:0px;
+    width: 17px;
+    height: 15px;
+    border-radius: 50%; 
+    border: 3px solid red;
+    clip-path: inset(0 0 0 50%);
+    transform: rotate(-25deg);
+}
+
+.fish-2 .pattern-2-2{
+    position: absolute;
+    left:38px;
+    top:12px;
+    width: 17px;
+    height: 15px;
+    border: 3px solid red;
+    border-radius: 50%;
+    clip-path: inset(0 0 0 50%);
+}
+
+.fish-2 .pattern-2-3{
+    position: absolute;
+    left:35px;
+    top:25px;
+    width: 17px;
+    height: 15px;
+    border: 3px solid red;
+    border-radius: 50%;
+    clip-path: inset(0 0 0 50%);
+    transform: rotate(20deg);
+}
+
+.fish-2 .eye{
+    position: absolute;
+    top: 2px;
+    left: 12px;
+    transform: rotate(-35deg);
+}
+
+.fish-3 {
+    top: 110px;
+    left: 100px;
+}
+
+.fish-3 .body-wrapper{
+    overflow: hidden;
+    width: 60px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.fish-3 .body{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(55deg, #F4F5D5, #E4BB38);
+}
+
+.fish-3 .pattern-1{
+    position: absolute;
+    top: -5px ;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border:5px solid  red;
+}
+
+.fish-3 .pattern-2-1{
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    width: 15px;
+    height: 12px;
+    border-radius: 50%; 
+    border: 2px solid red;
+    clip-path: inset(0 0 0 50% );
+    transform: rotate(-15deg);
+}
+
+.fish-3 .pattern-2-2{
+    position: absolute;
+    right: 15px;
+    top:9px;
+    width: 15px;
+    height: 12px;
+    border: 2px solid red;
+    border-radius: 50%;
+    clip-path: inset(0 0 0 50% );
+}
+
+.fish-3 .pattern-2-3{
+    position: absolute;
+    right: 17px;
+    top: 18px;
+    width: 15px;
+    height: 12px;
+    border: 2px solid red;
+    border-radius: 50%;
+    clip-path: inset(0 0 0 50% );
+    transform: rotate(20deg);
+}
+
+.fish-3 .eye{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.fish-3 .tail{
+    position: absolute;
+    left: 45px;
+    top: -10px;
+    border-width: 25px 60px 25px 0;
+    border-color: transparent  #E6C451 transparent transparent;
+    z-index: 0;
+}
+
+.fish-3 .tail::after{
+    position: absolute;
+    content: "";
+    top: -25px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: white; 
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.aquarium::before {
+    z-index: 30;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: repeating-linear-gradient(
+        90deg,
+        #FBF434 0 10px,
+        orange 10px 20px
+    );
+}
+        
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+    border: 0.1rem solid #005240;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-color: #168169;
+}
+
+.faq-question {
+    color: #005240;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+
+.faq-answer {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    padding-left: 32px;
+}
+
+    @media (max-width: 768px) {
+    .faq-title {
+        font-size: 2rem;
+    }
+    
+    .faq-item {
+        padding: 25px;
+    }
+    
+    .faq-question {
+        font-size: 1.2rem;
+    }
+    
+    .faq-answer {
+        font-size: 1rem;
+        padding-left: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section {
+        margin-top: 40px;
+        padding: 20px 0;
+    }
+    
+    .faq-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .faq-item {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .faq-question {
+        font-size: 1.1rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .faq-question::before {
+        align-self: flex-start;
+    }
+    
+    .faq-answer {
+        padding-left: 0;
+        font-size: 0.95rem;
+    }
+    
+    .faq-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .faq-item {
+        padding: 15px;
+    }
+    
+    .faq-question {
+        font-size: 1rem;
+    }
+    
+    .faq-answer {
+        font-size: 0.9rem;
+    }
+}

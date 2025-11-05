@@ -1,0 +1,421 @@
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    
+}
+
+.insert-image {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    display: block;
+}
+
+.animation-container {
+    margin: 0;
+    flex: 0 0 auto; 
+}
+
+.flex-component {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Основное изображение */
+.main-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
+    background-image: url('/pics/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main-image::before {
+    content: 'Пора отдохнуть';
+    position: absolute;
+    right: 20%;
+    top: 30%;
+    width: 30%;
+    height: 70%;
+    z-index: 0;
+    color: red;
+    font-size: 12px;
+    white-space: nowrap; /*Запрещает автоматический перенос текста */
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+.main-image::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    height: 40%;
+    z-index: 1;
+    background-image: url('/pics/fox1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main-image .cristmas_tree {
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    width: 60%;
+    height: 60%;
+    z-index: 1;
+    background-image: url('/pics/elka2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.clouds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.cloud {
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    object-fit: contain;
+}
+
+.cloud1 {
+    top: 5%;
+    left:0;
+}
+.cloud2 {
+    top: 10%;
+    left: 50%;
+}
+
+/* ========== АНИМАЦИИ ========== */
+@keyframes floatCloud {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;    
+    }
+    10% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes shakeTree {
+    0%, 100%, 50% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(2deg) scale(1.05);
+    }
+    75% {
+        transform: rotate(-2deg) scale(1.05);
+    }
+}
+
+@keyframes runAwayCurve {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    14% {
+        transform: translate(-30px, -10px) scale(0.95);
+        opacity: 0.95;
+    }
+    42% {
+        transform: translate(30px, -35px) scale(0.7);
+        opacity: 0.8;
+    }
+    66% {
+        transform: translate(-50px, -45px) scale(0.4);
+        opacity: 0.5;
+    }
+    84% {
+        transform: translate(30px, -55px) scale(0.25);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-30px, -75px) scale(0.1);
+        opacity: 0;
+    }
+}
+
+@keyframes shakeHorizontal {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-0.5px);
+    }
+    75% {
+        transform: translateX(0.5px);
+    }
+}
+
+/* ========== СОСТОЯНИЯ ========== */
+.flex-component:hover .clouds {
+    opacity: 1;
+    animation: floatCloud 30s linear infinite;
+}
+
+.flex-component:active .clouds {
+    opacity: 1;
+    animation: none;
+}
+
+.main-image .cristmas_tree:hover {
+    animation: shakeTree 1s linear infinite;
+}
+
+.main-image:hover::before {
+    opacity: 1;
+    z-index: 1;
+}
+
+.main-image:active::before {
+    content: 'Отдохнули(';
+    left: 20%;
+    top: 25%;
+    width: 30%;
+    height: 70%;
+    transform: rotate(-35deg);
+    opacity: 1;
+    z-index: 1;
+}
+
+.main-image:active::after {
+    background-image: url('/pics/run_fox.png');
+    z-index: 1;
+    animation: runAwayCurve 15s ease-out forwards;
+}
+
+.flex-component:active {
+    animation: shakeHorizontal 0.1s ease-in-out infinite;
+}
+
+
+.schedule-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}
+ 
+.weekly-schedule {
+    background: #ffffff;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.days-flex {
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff;
+    border:1px solid #005240;
+    border-radius: 10px;
+}
+
+.day-column {
+    flex: 1;
+    min-width: 200px;
+    background: #ffffff;
+    padding: 20px 15px;
+    min-height: 100px;
+    border:1px solid #005240;
+    border-radius: 10px;
+}
+
+.day-header {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.day-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.training-session {
+    color: #000000;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.training-time {
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    display: flex;;
+}
+
+.training-time::before {
+    content: "⏰";
+    font-size: 1rem;
+}
+
+.day-off {
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.day-off::before {
+    content: "🎯";
+    font-size: 1rem;
+}
+
+.training-info {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.info-title {
+    font-size: 2rem;
+    color: #005240;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.info-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 40vh;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    border: 0.1rem solid #005240;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    color: #005240;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-card h3::before {
+    font-size: 1.2rem;
+}
+
+.info-card.locations h3::before {
+    content: "🏢";
+}
+
+.info-card.levels h3::before {
+    content: "📊";
+}
+
+.info-card.equipment h3::before {
+    content: "🎯";
+}
+
+.info-card.coaches h3::before {
+    content: "👨‍🏫";
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-item {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item::before {
+    content: "✓";
+    color: #005240;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .schedule-container {
+        margin: 0 15px;
+    }
+    .day-column {
+        flex: 1 1 100%;
+        min-height: 160px;
+        padding: 15px 10px;
+    }
+    
+    .training-info {
+        padding: 25px;
+    }
+    
+    .info-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .training-info {
+        padding: 20px;
+    }
+    
+    .info-card {
+        padding: 20px;
+    }
+    
+    .day-name {
+        font-size: 1rem;
+    }
+    
+    .training-session {
+        padding: 10px;
+    }
+}
