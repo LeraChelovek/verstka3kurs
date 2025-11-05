@@ -17,9 +17,9 @@ function loadComponent(componentId, filePath) {
 // Загружаем все компоненты при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, loading components...');
-    loadComponent('header', '.components/header.html');
-    loadComponent('menu', '.components/menu.html');
-    loadComponent('footer', '.components/footer.html');
+    loadComponent('header', 'components/header.html');
+    loadComponent('menu', 'components/menu.html');
+    loadComponent('footer', 'components/footer.html');
 });
 
 
