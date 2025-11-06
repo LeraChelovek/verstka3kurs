@@ -64,7 +64,6 @@
 .answers-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
 
 .answer-option {
@@ -75,6 +74,7 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    margin: 0.5rem 0;
 }
 
 .answer-option:hover {
@@ -90,7 +90,6 @@
 
 .answer-option.correct {
     background: #d5f4e6;
-    transform: scale(1.05);
     z-index: 10;
 }
 
@@ -192,6 +191,14 @@
     background: linear-gradient(90deg, #3498db, #2ecc71);
     width: 0%;
     transition: width 0.5s ease;
+}
+
+.review-marker {
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
 }
 
 @keyframes slideDown {
