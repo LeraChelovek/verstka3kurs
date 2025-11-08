@@ -1,36 +1,10 @@
-/*
-    window.onload = function() {
-    // Ждем еще немного для полной гарантии
-    setTimeout(initHamburgerMenu, 100);
-};
-
-function initHamburgerMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-}*/
-  
 window.onload = function() {
-    console.log('✅ Страница полностью загружена');
+    console.log('Страница полностью загружена');
     setTimeout(initHamburgerMenu, 100);
 };
 
 function initHamburgerMenu() {
-    console.log('🚀 Функция initHamburgerMenu запущена');
+    console.log('Функция initHamburgerMenu запущена');
     
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -39,10 +13,10 @@ function initHamburgerMenu() {
     console.log('Найден navMenu:', navMenu);
     
     if (hamburger && navMenu) {
-        console.log('✅ Оба элемента найдены, вешаем обработчики');
+        console.log('Оба элемента найдены, вешаем обработчики');
         
         hamburger.addEventListener('click', function() {
-            console.log('🎯 Клик по гамбургеру');
+            console.log('Клик по гамбургеру');
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             
@@ -55,13 +29,13 @@ function initHamburgerMenu() {
         
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                console.log('🔗 Клик по ссылке меню');
+                console.log('Клик по ссылке меню');
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
     } else {
-        console.error('❌ Элементы не найдены!');
+        console.error('Элементы не найдены!');
         console.error('Hamburger:', hamburger);
         console.error('NavMenu:', navMenu);
     }
