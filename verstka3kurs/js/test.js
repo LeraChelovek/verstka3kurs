@@ -312,9 +312,6 @@ class Quiz {
 
       reviewQuestions.appendChild(questionReview);
     });
-
-    
-
   }
 
   restartQuiz() {
